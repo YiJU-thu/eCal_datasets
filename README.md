@@ -12,5 +12,6 @@ python test_access.py
 ```
 to verify that you have the needed write and read access. (for eCal members, it is read-only access by default.)
 
+If you (especially eCal members) need to pass some sensitive information (e.g., an API key) to download the data, please store the key seperately under a file(folder) with **"NoTrack"** in its file(folder)name. *If you accidentally leak your keys, please contact Yi immediately.*
 
 ## Datasets
