@@ -1,3 +1,4 @@
 {
-    "datasets": "/home/ecal_team/datasets"
+    "datasets": "/home/ecal_team/datasets",
+    "ca_vehicle": "ca_vehicle"
 }
