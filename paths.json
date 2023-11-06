@@ -1,5 +1,6 @@
 {
     "datasets": "/home/ecal_team/datasets",
     "ca_vehicle": "ca_vehicle",
-    "acn_data": "acn_data"
+    "acn_data": "acn_data",
+    "eia_grid": "eia_grid"
 }
