@@ -1,4 +1,4 @@
-import os
+import os, sys
 import argparse
 import numpy as np
 import pandas as pd
@@ -64,15 +64,19 @@ def download_acn_data(api_key, site, test=False, timeseries=False, ts_compress_e
         print("{} [{}] successfully saved - {} records".format("Testing..."*test, site, len(data)))
         
         if test:
-            pass
-            # os.remove(os.path.join(out_dir, save_fn))   # remove the test file
+            # pass
+            os.remove(os.path.join(out_dir, save_fn))   # remove the test file
 
     return data
 
 
 
 if __name__ == "__main__":
-    curr_dir = os.path.realpath(__file__)
+    curr_dir = os.path.dirname(__file__)
+    utils_dir = os.path.join(curr_dir, "../utils")
+    if utils_dir not in sys.path:
+        sys.path.append(utils_dir)
+    from util_func import get_dataset_dir
 
     # the following part can be reused for other datasets
     # ================================================
@@ -111,21 +115,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if args.out_dir is None:
-        path_file = os.path.join(curr_dir.split("ACN_data")[0], "paths.json")
-        assert os.path.exists(path_file), "Cannot find paths.json file, please specify out_dir"
-        
-        with open(path_file, "r") as f:
-            paths = json.load(f)
-        try:
-            datasets_dir = paths["datasets"]
-            acn_data_dir = paths["acn_data"]
-        except KeyError:
-            raise KeyError("make sure key \"datasets\" AND \"acn_data\" are in paths.json")
-        out_dir = os.path.join(datasets_dir, acn_data_dir)
-        assert os.path.exists(datasets_dir), "Cannot find dir: {}".format(datasets_dir)
-    else:
-        out_dir = args.out_dir
+    out_dir = get_dataset_dir("acn_data", args.out_dir, mkdir=True)
     
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
