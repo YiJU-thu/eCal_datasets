@@ -15,6 +15,6 @@ to verify that you have the needed write and read access. (for eCal members, it 
 :warning:**ATTENTION**:warning: If you (especially eCal members) need to pass some <span style="color:red">sensitive information</span> (e.g., an API key) to download the data, please store the key seperately under a file(folder) with **"NoTrack"** in its file(folder)name. *If you accidentally leak your keys, please contact Yi immediately.*
 
 ## Datasets
-- [California vehicle survey](travel_survey/README.md) (2013, ‘17, ‘19)
-- [ACN-data](ACN_data/README.md) (2018-2021, CA, 66745 charging sessions)
-- [EIA electric grid monitor](EIA_grid/README.md) (2015-2023, USA, region/BA hourly power & emissions)
+- [California vehicle survey](travel_survey/) (2013, ‘17, ‘19)
+- [ACN-data](ACN_data/) (2018-2021, CA, 66745 charging sessions)
+- [EIA electric grid monitor](EIA_grid/) (2015-2023, USA, region/BA hourly power & emissions)
