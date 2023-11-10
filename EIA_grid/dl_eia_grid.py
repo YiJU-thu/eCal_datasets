@@ -64,9 +64,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     out_dir = get_dataset_dir("eia_grid", args.out_dir, mkdir=True)
-    
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
 
     url_fn = os.path.join(curr_dir, "EIA_region_url.xlsx")
     assert os.path.exists(url_fn), "Cannot find EIA_region_url.xlsx"
