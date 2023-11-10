@@ -116,9 +116,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     out_dir = get_dataset_dir("acn_data", args.out_dir, mkdir=True)
-    
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
 
     download_acn_data(api_key, site=args.site, test=args.test, timeseries=args.timeseries, ts_compress_eps=args.ts_compress_eps, out_dir=out_dir)
 
